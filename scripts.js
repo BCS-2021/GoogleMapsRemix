@@ -1,3 +1,5 @@
+
+
 let map;
 
 // List of Castles
@@ -17,7 +19,7 @@ var forest = [
   ['Lynn Woods', 42.4791487, -70.9903823, 4],
   ['Another Forest', 42.6064768,-71.096531, 3],
   ['Another Forest 2', 42.6315109,-70.9207041, 3]
-
+  
 ];
 
 // List of Catacombs
@@ -72,7 +74,7 @@ function initMap() {
     zoom: 13,
     center: new google.maps.LatLng(42.4668, -70.9495),
   });
-
+  
   // Castle location on Map
   for (i = 0; i < castles.length; i++) {
     marker = new google.maps.Marker({
@@ -81,7 +83,7 @@ function initMap() {
       icon:'/images/mansion.png'
     });
   }
-
+  
   // Forest Location on Map
   for (i = 0; i < forest.length; i++) {
     marker = new google.maps.Marker({
@@ -90,7 +92,7 @@ function initMap() {
       icon:'/images/forest.png'
     });
   }
-
+  
   // Catacombs Location on Map
   for (i = 0; i < catacombs.length; i++) {
     marker = new google.maps.Marker({
@@ -99,7 +101,7 @@ function initMap() {
       icon:'/images/catacomb.png'
     });
   }
-
+  
   // Town Location on Map
   for (i = 0; i < towns.length; i++) {
     marker = new google.maps.Marker({
@@ -117,7 +119,7 @@ function initMap() {
       icon:'/images/cave.png'
     });
   }
-
+  
   // Shrine Location on Map
   for (i = 0; i < shrines.length; i++) {
     marker = new google.maps.Marker({
@@ -126,7 +128,7 @@ function initMap() {
       icon:'/images/shrine.png'
     });
   }
-
+  
   // Zone Location on Map
   for (i = 0; i < zones.length; i++) {
     marker = new google.maps.Marker({
@@ -135,7 +137,7 @@ function initMap() {
       icon:'/images/zone.png'
     });
   }
-
+  
   // Ruin Location on Map
   for (i = 0; i < ruins.length; i++) {
     marker = new google.maps.Marker({
@@ -144,6 +146,12 @@ function initMap() {
       icon:'/images/ruins.png'
     });
   }
-
-
+  
+  require('dotenv').config()
+  console.log(process.env)
+  
+  const api_key = process.env.API_KEY;
+  const URL = `https://maps.googleapis.com/maps/api/js?key=${api_key}&callback=initMap&libraries=&v=weekly`
+  console.log(URL)
+  
 }
