@@ -44,8 +44,8 @@ var towns = [
 
 // List of Caves
 var caves = [
-  ['Cave 1', 42.5280321,-70.9990256, 3],
-  ['Cave 2', 42.4807153,-71.0264971, 2]
+  ['Candyland Cave', 42.5280321,-70.9990256, 3],
+  ['Boogeyman Cave', 42.4807153,-71.0264971, 2]
 ]
 
 // List of Shrines
@@ -77,73 +77,193 @@ function initMap() {
   
   // Castle location on Map
   for (i = 0; i < castles.length; i++) {
-    marker = new google.maps.Marker({
+
+      const marker = new google.maps.Marker({
       position: new google.maps.LatLng(castles[i][1],castles[i][2]),
       map:map,
       icon:'/images/mansion.png'
     });
+    const infowindow = new google.maps.InfoWindow({
+      content: castles[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
+    });
+    
   }
   
   // Forest Location on Map
   for (i = 0; i < forest.length; i++) {
-    marker = new google.maps.Marker({
+
+    const marker = new google.maps.Marker({
       position: new google.maps.LatLng(forest[i][1],forest[i][2]),
       map:map,
       icon:'/images/forest.png'
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+      content: forest[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
     });
   }
   
   // Catacombs Location on Map
   for (i = 0; i < catacombs.length; i++) {
-    marker = new google.maps.Marker({
+    
+    const marker = new google.maps.Marker({
       position: new google.maps.LatLng(catacombs[i][1],catacombs[i][2]),
       map:map,
       icon:'/images/catacomb.png'
+    });
+    const infowindow = new google.maps.InfoWindow({
+      content: catacombs[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
     });
   }
   
   // Town Location on Map
   for (i = 0; i < towns.length; i++) {
-    marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: new google.maps.LatLng(towns[i][1],towns[i][2]),
       map:map,
       icon:'/images/town.png'
+    });
+    const infowindow = new google.maps.InfoWindow({
+      content: towns[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
     });
   }
   
   // Cave Location on Map
   for (i = 0; i < caves.length; i++) {
-    marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: new google.maps.LatLng(caves[i][1],caves[i][2]),
       map:map,
       icon:'/images/cave.png'
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+      content: caves[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
     });
   }
   
   // Shrine Location on Map
   for (i = 0; i < shrines.length; i++) {
-    marker = new google.maps.Marker({
+   const marker = new google.maps.Marker({
       position: new google.maps.LatLng(shrines[i][1],shrines[i][2]),
       map:map,
       icon:'/images/shrine.png'
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+      content: shrines[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
     });
   }
   
   // Zone Location on Map
   for (i = 0; i < zones.length; i++) {
-    marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: new google.maps.LatLng(zones[i][1],zones[i][2]),
       map:map,
       icon:'/images/zone.png'
+    });
+    const infowindow = new google.maps.InfoWindow({
+      content: zones[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
     });
   }
   
   // Ruin Location on Map
   for (i = 0; i < ruins.length; i++) {
-    marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: new google.maps.LatLng(ruins[i][1],ruins[i][2]),
       map:map,
       icon:'/images/ruins.png'
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+      content: ruins[i][0],
+      maxWidth: 200,
+    
+    });
+  
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+
     });
   }
   
